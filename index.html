@@ -1,1 +1,280 @@
-Under construction
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tsutomu — Mathematician & ML Researcher</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #fafaf8;
+      --text:     #1a1a1a;
+      --muted:    #6b6b6b;
+      --accent:   #2a52be;
+      --border:   #e4e4e0;
+      --max-w:    680px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0 2rem;
+    }
+    nav .inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+    nav .logo {
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+    nav ul a {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    nav ul a:hover { color: var(--text); }
+
+    /* ── Sections ── */
+    section {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    section + section {
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Hero / About ── */
+    #about .greeting {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    #about h1 {
+      font-size: 2.4rem;
+      font-weight: normal;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    #about p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    #about p a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    #about p a:hover { border-color: var(--accent); }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.8rem;
+    }
+    .tag {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      background: var(--border);
+      color: var(--muted);
+      padding: 0.25rem 0.7rem;
+      border-radius: 2px;
+    }
+
+    /* ── Section headings ── */
+    .section-label {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Blog ── */
+    .post-list { list-style: none; }
+    .post-list li {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-list li:first-child { border-top: 1px solid var(--border); }
+    .post-meta {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+    .post-title {
+      font-size: 1.05rem;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .post-title:hover { border-color: var(--text); }
+    .post-excerpt {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    /* ── Contact ── */
+    #contact p { color: var(--muted); margin-bottom: 1rem; }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .contact-links a {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .contact-links a:hover { border-color: var(--accent); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      #about h1 { font-size: 1.8rem; }
+      nav ul { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="inner">
+      <a class="logo" href="#about">Tsutomu</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Notes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- About -->
+  <section id="about">
+    <p class="greeting">Hello, I'm</p>
+    <h1>Tsutomu<br>Mathematician &amp; ML Researcher</h1>
+    <p>
+      I work at the intersection of mathematics and machine learning —
+      bringing rigorous structure to problems in learning theory,
+      optimization, and data-driven modeling.
+    </p>
+    <p>
+      My research interests include <!-- e.g. geometric deep learning, measure theory, statistical learning theory -->.
+      I enjoy finding the precise theorem behind an empirical phenomenon.
+    </p>
+    <p>
+      Currently based at <!-- Institution / City -->.
+      You can find my work on
+      <a href="https://arxiv.org" target="_blank" rel="noopener">arXiv</a>
+      and <a href="https://github.com/toskua" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+    <div class="tags">
+      <span class="tag">Mathematics</span>
+      <span class="tag">Machine Learning</span>
+      <span class="tag">Python</span>
+      <span class="tag">Learning Theory</span>
+      <span class="tag">Optimization</span>
+    </div>
+  </section>
+
+  <!-- Blog / Notes -->
+  <section id="blog">
+    <p class="section-label">Notes &amp; Writing</p>
+    <ul class="post-list">
+      <li>
+        <p class="post-meta">Coming soon</p>
+        <a class="post-title" href="#">Notes on Measure-Theoretic Probability</a>
+        <p class="post-excerpt">A compact treatment of σ-algebras, measures, and the Lebesgue integral — written for ML practitioners.</p>
+      </li>
+      <li>
+        <p class="post-meta">Coming soon</p>
+        <a class="post-title" href="#">Why Gradient Descent Converges (Sometimes)</a>
+        <p class="post-excerpt">An introduction to loss landscape geometry and convergence guarantees for smooth, non-convex objectives.</p>
+      </li>
+      <li>
+        <p class="post-meta">Coming soon</p>
+        <a class="post-title" href="#">PAC Learning in Two Pages</a>
+        <p class="post-excerpt">The core definitions and the fundamental theorem of statistical learning, distilled.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <p class="section-label">Get in touch</p>
+    <p>
+      I'm happy to discuss research, collaborations, or just interesting
+      problems. The best way to reach me is by email.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:toskua@gmail.com">toskua@gmail.com</a>
+      <a href="https://github.com/toskua" target="_blank" rel="noopener">GitHub</a>
+      <!-- Add more links as needed: arXiv, LinkedIn, Twitter/X, etc. -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="yr"></span> Tsutomu. Built with HTML &amp; GitHub Pages.
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
